@@ -1,3 +1,7 @@
+body {
+    box-sizing: border-box;
+}
+
 #display {
     width: 30vw;
     height: 5vh;
@@ -5,20 +9,28 @@
     font-size: 4.8vh;
     display: flex;
     justify-content: right;
-    padding-right: 5px;
 }
 
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 7.6vw);
+    grid-template-columns: repeat(4, 7.54vw);
     grid-template-rows: repeat(4, 5vh);
     box-sizing: border-box;
 }
 
-.grid-item {
+.number-item, .operator-item {
     border: 1px solid black;
     justify-content: center;
     display: flex;
     justify-items: center;
+    align-items: center;
+}
+
+#clear {
+    width: 30vw;
+    height: 5vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
