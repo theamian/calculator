@@ -75,6 +75,7 @@ function equals() {
 const numbers = document.querySelectorAll(".number-item");
 const display = document.querySelector("#display");
 const operators = document.querySelectorAll(".operator-item");
+const period = document.querySelector(".number-item[name='.']");
 
 let display_value = "0";
 let operator = "";
@@ -84,8 +85,10 @@ let action = "";
 
 numbers.forEach(item => {
     item.addEventListener("mouseup", (e) => {
-        //if(action !== "") display_value = "";
-        display_value += e.target.attributes.name.value;
+        if(e.target.attributes.name.value === "." && display_value.includes(".")) {}
+        else {
+            display_value += e.target.attributes.name.value;
+        }
         ispisivanje(display_value);
     })
 })
