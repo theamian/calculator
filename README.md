@@ -1,0 +1,1 @@
+A simple calculator as a part of The Odin Project
