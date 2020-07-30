@@ -2,35 +2,75 @@ body {
     box-sizing: border-box;
 }
 
+#container {
+    width: 30vw;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 200%;
+}
+
 #display {
     width: 30vw;
     height: 5vh;
-    border: 1px solid black;
     font-size: 4.8vh;
     display: flex;
     justify-content: right;
+    border-bottom: 1px solid black;
 }
 
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 7.54vw);
+    grid-template-columns: repeat(4, 7.5vw);
     grid-template-rows: repeat(4, 5vh);
     box-sizing: border-box;
 }
 
 .number-item, .operator-item {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     justify-content: center;
     display: flex;
     justify-items: center;
     align-items: center;
 }
 
-#clear {
-    width: 30vw;
+.number-item {
+    background-color: cornflowerblue;
+    font-weight: bold;
+}
+
+.operator-item {
+    background-color: khaki;
+}
+
+#clear, #del {
+    width: 15vw;
     height: 5vh;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: pink;
+    font-weight: bold;
+    border-top: 1px solid black;
+}
+
+#clear {
+    float: left;
+    border-bottom-left-radius: 5px;
+}
+
+#del {
+    border-bottom-right-radius: 5px;
+}
+
+#clear.highlight, #del.highlight {
+    background-color: red;
+}
+
+.number-item.highlight {
+    background-color: blue;
+}
+
+.operator-item.highlight {
+    background-color: gold;
 }

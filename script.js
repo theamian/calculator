@@ -47,8 +47,17 @@ function equals() {
     ispisivanje(display_value);
  }
 
+
  function calculating(op) {
-    if(op !== "=" && op !== "clear") {
+    if(op === "del") {
+        if(display_value.length == 0) display_value = "0";
+        else {
+            display_value = display_value.slice(0,display_value.length-1);
+        }
+        ispisivanje(display_value);
+    }
+
+    else if(op !== "=" && op !== "clear") {
         if(action !== "") {
             equals();
         }
@@ -71,11 +80,9 @@ function equals() {
  }
 
 
-
 const numbers = document.querySelectorAll(".number-item");
 const display = document.querySelector("#display");
 const operators = document.querySelectorAll(".operator-item");
-const period = document.querySelector(".number-item[name='.']");
 
 let display_value = "0";
 let operator = "";
@@ -91,14 +98,15 @@ numbers.forEach(item => {
         }
         ispisivanje(display_value);
     })
+    item.addEventListener("mouseover", () => item.classList.toggle("highlight"));
+    item.addEventListener("mouseout", () => item.classList.toggle("highlight"));
 })
 
 operators.forEach(item => {
     item.addEventListener("mouseup", (e) => {
         operator = e.target.attributes.name.value;
         calculating(operator);
-        // console.log(operator);
     })
+    item.addEventListener("mouseover", () => item.classList.toggle("highlight"));
+    item.addEventListener("mouseout", () => item.classList.toggle("highlight"));
 })
-
-// console.log(operator);
